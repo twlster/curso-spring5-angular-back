@@ -8,8 +8,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bolsadeideas.springboot.backend.apirest.models.entity.Bill;
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Client;
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Region;
+import com.bolsadeideas.springboot.backend.apirest.models.repositories.BillRepository;
 import com.bolsadeideas.springboot.backend.apirest.models.repositories.ClientsRepository;
 import com.bolsadeideas.springboot.backend.apirest.models.repositories.RegionRepository;
 
@@ -19,6 +21,9 @@ public class ClientsServiceImplementation implements ClientsService{
 
 	@Autowired
 	private ClientsRepository repository;
+	
+	@Autowired
+	private BillRepository billRepository;
 	
 	@Autowired
 	private RegionRepository regionRepository;
@@ -52,6 +57,26 @@ public class ClientsServiceImplementation implements ClientsService{
 	@Transactional(readOnly = true)
 	public List<Region> findAllRegions() {
 		return regionRepository.findAll();
+	}
+
+	@Override
+	public List<Bill> findAllBills() {
+		return (List<Bill>) billRepository.findAll();
+	}
+
+	@Override
+	public Bill findBillById(Long id) {
+		return billRepository.findById(id).orElse(null);
+	}
+
+	@Override
+	public Bill saveBill(Bill bill) {
+		return billRepository.save(bill);
+	}
+
+	@Override
+	public void deleteBill(Long id) {
+		billRepository.deleteById(id);
 	}
 
 }

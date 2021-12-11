@@ -51,3 +51,41 @@ INSERT INTO db_springboot_backend.clients(name,last_name,email,birth_date, regio
 INSERT INTO db_springboot_backend.clients(name,last_name,email,birth_date, region_id) VALUES ('Pepe23','Jimenez','p.jimenez236@gmail.com','1986-08-26', 3);
 INSERT INTO db_springboot_backend.clients(name,last_name,email,birth_date, region_id) VALUES ('Maria23','Constanza','maria.const89236@gmail.com','1995-07-12', 4);
 INSERT INTO db_springboot_backend.clients(name,last_name,email,birth_date, region_id) VALUES ('Manuel23','Perez','mperez236@gmail.com','1991-11-13', 5);
+
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Alienware Laptop M15X', 1230.00, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Sony Vaio 17 inc', 649.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Asus G74SX', 1644.50, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Hp Screen 24y', 109.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('LG Qwerty KeyBoard', 12.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Headset Noice Cancelation', 44.95, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Tecknet Wireless Mouse', 18.75, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Asus Portable Screen', 198.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Asus G75', 1784.95, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Samsung A50', 210, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Xiaomi Renmi Note 9', 320, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Samsung S20 Plus', 649.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Samsung S20 Plus Brown Cover', 19.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Cecotec Hand Vacuum', 19.95, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('LG SmartTV 43 inc', 650, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Nintendo Switch', 230, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Legend of Zelda: Breath of the wild for Nintendo Switch', 59.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Legend of Zelda: Links Awakening for Nintendo Switch', 49.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Immortals Phoenyx Rising for Nintendo Switch', 29.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('Nikon 3500', 499.99, NOW());
+INSERT INTO db_springboot_backend.products(name, price, created_at) VALUES ('HP OfficeJet 6951', 49.95, NOW());
+
+INSERT INTO db_springboot_backend.bills(description, observation, client_id, created_at) VALUES ('Buying nintento stuff','',1, NOW());
+INSERT INTO db_springboot_backend.bills(description, observation, client_id, created_at) VALUES ('Buying Laptop Equipment','',1, NOW());
+INSERT INTO db_springboot_backend.bills(description, observation, client_id, created_at) VALUES ('Buying SmartPhone','',2, NOW());
+
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,1,16);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,1,17);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,1,18);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,1,19);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,2,3);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (2,2,6);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,2,7);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,2,5);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,3,11);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,3,12);
+INSERT INTO db_springboot_backend.bill_items(quantity, bill_id, product_id) VALUES (1,3,13);
