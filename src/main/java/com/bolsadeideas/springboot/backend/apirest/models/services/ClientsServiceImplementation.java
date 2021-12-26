@@ -10,9 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Bill;
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Client;
+import com.bolsadeideas.springboot.backend.apirest.models.entity.Product;
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Region;
 import com.bolsadeideas.springboot.backend.apirest.models.repositories.BillRepository;
 import com.bolsadeideas.springboot.backend.apirest.models.repositories.ClientsRepository;
+import com.bolsadeideas.springboot.backend.apirest.models.repositories.ProductRepository;
 import com.bolsadeideas.springboot.backend.apirest.models.repositories.RegionRepository;
 
 @Service
@@ -27,6 +29,9 @@ public class ClientsServiceImplementation implements ClientsService{
 	
 	@Autowired
 	private RegionRepository regionRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 	
 	@Override
 	public List<Client> findAll() {
@@ -77,6 +82,11 @@ public class ClientsServiceImplementation implements ClientsService{
 	@Override
 	public void deleteBill(Long id) {
 		billRepository.deleteById(id);
+	}
+
+	@Override
+	public List<Product> findAllProduct() {
+		return productRepository.findAll();
 	}
 
 }

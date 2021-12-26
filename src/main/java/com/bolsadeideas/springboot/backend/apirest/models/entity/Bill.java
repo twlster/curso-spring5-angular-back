@@ -27,12 +27,13 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 @Builder
 @Entity
 @Table(name = "bills")
-
+@AllArgsConstructor
 public class Bill implements Serializable {
 
 	@Transient
@@ -45,15 +46,16 @@ public class Bill implements Serializable {
 	@NotEmpty(message = "can't be empty")
 	private String description;
 
+	@Column(nullable = true)
 	private String observation;
 
 	@NotNull
 	@Column(name = "created_at")
 	@Temporal(TemporalType.DATE)
-	private Date createdAt;
+	private Date createdAt = new Date();
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "bills" })
+	@JsonIgnoreProperties(value={ "hibernateLazyInitializer", "handler", "bills" }, allowSetters = true)
 	private Client client;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -66,7 +68,7 @@ public class Bill implements Serializable {
 	}
 
 	public BigDecimal getTotal() {
-		return items.stream().map(BillItem::calculateValue).reduce(BigDecimal.ZERO, BigDecimal::add);
+		return items.stream().map(BillItem::getValue).reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 
 	@PrePersist

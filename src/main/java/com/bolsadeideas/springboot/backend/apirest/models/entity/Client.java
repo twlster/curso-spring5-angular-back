@@ -25,11 +25,13 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "clients")
 
@@ -70,7 +72,7 @@ public class Client implements Serializable {
 	private Region region;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "client", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "client" })
+	@JsonIgnoreProperties(value={ "hibernateLazyInitializer", "handler", "client" }, allowSetters = true)
 	private List<Bill> bills;
 
 	public Long getId() {

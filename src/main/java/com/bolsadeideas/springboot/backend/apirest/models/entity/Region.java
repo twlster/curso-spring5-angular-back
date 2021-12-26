@@ -11,11 +11,13 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="regions")
 public class Region implements Serializable{

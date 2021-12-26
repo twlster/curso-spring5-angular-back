@@ -26,11 +26,13 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="users")
 

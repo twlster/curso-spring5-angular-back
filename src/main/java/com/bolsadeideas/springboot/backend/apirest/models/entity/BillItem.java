@@ -18,14 +18,15 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="bill_items")
-
 public class BillItem implements Serializable{
 
 	@Transient
@@ -35,7 +36,6 @@ public class BillItem implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty(message = "can't be empty")
 	@Column(nullable = false)
 	private int quantity;
 	
@@ -45,7 +45,7 @@ public class BillItem implements Serializable{
 	@NotNull(message = "The product can't be empty")
 	private Product product;
 	
-	public BigDecimal calculateValue() {
+	public BigDecimal getValue() {
 		return product.getPrice().multiply(BigDecimal.valueOf(quantity));
 	}
 	

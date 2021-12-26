@@ -90,7 +90,7 @@ public class Controller {
 	}
 
 	@RequestMapping(value = "/clients/{id}", method = RequestMethod.GET, produces = "application/json")
-	//@Secured({"ROLE_USER","ROLE_ADMIN"})
+	@Secured({"ROLE_USER","ROLE_ADMIN"})
 	public ResponseEntity<?> getClient(@PathVariable("id") Long id) {
 		try {
 			Client client = service.findById(id);

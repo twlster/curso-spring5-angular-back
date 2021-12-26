@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Bill;
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Client;
+import com.bolsadeideas.springboot.backend.apirest.models.entity.Product;
 import com.bolsadeideas.springboot.backend.apirest.models.entity.Region;
 
 public interface ClientsService{
@@ -30,4 +31,6 @@ public interface ClientsService{
 	public Bill saveBill(Bill bill);
 	
 	public void deleteBill(Long id);
+	
+	public List<Product> findAllProduct();
 }
