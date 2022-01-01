@@ -37,7 +37,7 @@ import com.bolsadeideas.springboot.backend.apirest.models.services.UploadFileSer
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = { "http://localhost:8080", "http://localhost:4200" }, methods = { RequestMethod.GET,
+@CrossOrigin(origins = { "http://localhost:8080", "http://localhost:4200", "*" }, methods = { RequestMethod.GET,
 		RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
 public class Controller {
 
